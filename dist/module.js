@@ -53734,7 +53734,7 @@ var processData = function processData(series) {
       a = _a[0],
       b = _a[1];
 
-  var interval = (b - a) / 60000;
+  var interval = b ? (b - a) / 60000 : 60;
   var points = series[0].fields[0].values.buffer.map(function (v, i) {
     var result = [pondjs__WEBPACK_IMPORTED_MODULE_1__["Index"].getIndexString(interval + "m", series[0].fields[1].values.buffer[i]), v];
 

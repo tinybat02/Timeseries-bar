@@ -36,7 +36,8 @@ export const processData = (series: Frame[]) => {
     };
 
   const [a, b] = series[0].fields[1].values.buffer;
-  const interval = (b - a) / 60000;
+
+  const interval = b ? (b - a) / 60000 : 60;
   const points = series[0].fields[0].values.buffer.map((v, i) => {
     const result = [Index.getIndexString(`${interval}m`, series[0].fields[1].values.buffer[i]), v];
     for (let irow = 1; irow < series.length; irow++) {
