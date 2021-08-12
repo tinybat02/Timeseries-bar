@@ -53750,7 +53750,7 @@ var processData = function processData(series) {
       columns: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__spread"])(['index'], columns),
       points: points
     }),
-    max: maxTotal + 100,
+    max: maxTotal + 500,
     columns: columns
   };
 };
