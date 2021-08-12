@@ -1,0 +1,25 @@
+{
+  "type": "panel",
+  "name": "Timeseries",
+  "id": "id-timeseries-bar",
+  "dataFormats": ["table"],
+  "info": {
+    "description": "Timeseries Bar",
+    "author": {
+      "name": "Nam Le"
+    },
+    "keywords": [],
+    "logos": {
+      "small": "img/timeseries.svg",
+      "large": "img/timeseries.svg"
+    },
+    "screenshots": [],
+    "version": "1.0.0",
+    "updated": "2021-08-09"
+  },
+
+  "dependencies": {
+    "grafanaVersion": "6.3.x",
+    "plugins": []
+  }
+}
