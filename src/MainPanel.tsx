@@ -94,6 +94,7 @@ export class MainPanel extends PureComponent<Props, State> {
               .begin()
               .toUTCString()
               .replace(' GMT', '')
+              .replace(' 00:00:00', '')
           }
           highlighted={this.state.highlight}
           onHighlightChange={highlight => this.setState({ highlight })}

@@ -53539,7 +53539,7 @@ function (_super) {
       series: data,
       info: infoValues,
       infoTimeFormat: function infoTimeFormat(index) {
-        return index.begin().toUTCString().replace(' GMT', '');
+        return index.begin().toUTCString().replace(' GMT', '').replace(' 00:00:00', '');
       },
       highlighted: this.state.highlight,
       onHighlightChange: function onHighlightChange(highlight) {
