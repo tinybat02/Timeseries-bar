@@ -53513,6 +53513,8 @@ function (_super) {
       stylD.push({
         key: col,
         color: _constants__WEBPACK_IMPORTED_MODULE_4__["colors"][i]
+        /* , infoStyle: { line: { fill: '#000', stroke: '#fff', opacity: 1 } } */
+
       });
       legendD.push({
         key: col,
@@ -53575,7 +53577,7 @@ function (_super) {
         height: height,
         padding: 10
       }
-    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    }, columns.length > 1 && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       style: {
         display: 'flex',
         justifyContent: 'center'
@@ -53589,7 +53591,7 @@ function (_super) {
       enablePanZoom: true,
       onTimeRangeChanged: this.handleTimeRangeChange
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_timeseries_charts__WEBPACK_IMPORTED_MODULE_3__["ChartRow"], {
-      height: height - 100
+      height: columns.length > 1 ? height - 100 : height - 50
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_timeseries_charts__WEBPACK_IMPORTED_MODULE_3__["YAxis"], {
       id: "Visitors",
       label: "Visitors",

@@ -63,7 +63,10 @@ export class MainPanel extends PureComponent<Props, State> {
     const stylD = [],
       legendD = [];
     columns.map((col, i) => {
-      stylD.push({ key: col, color: colors[i] });
+      stylD.push({
+        key: col,
+        color: colors[i] /* , infoStyle: { line: { fill: '#000', stroke: '#fff', opacity: 1 } } */,
+      });
       legendD.push({ key: col, label: col });
     });
 
@@ -117,13 +120,15 @@ export class MainPanel extends PureComponent<Props, State> {
           padding: 10,
         }}
       >
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <Legend categories={legendD} style={style} type="dot" />
-        </div>
+        {columns.length > 1 && (
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <Legend categories={legendD} style={style} type="dot" />
+          </div>
+        )}
 
         <Resizable>
           <ChartContainer timeRange={timerange} enablePanZoom={true} onTimeRangeChanged={this.handleTimeRangeChange}>
-            <ChartRow height={height - 100}>
+            <ChartRow height={columns.length > 1 ? height - 100 : height - 50}>
               <YAxis
                 id="Visitors"
                 label="Visitors"
