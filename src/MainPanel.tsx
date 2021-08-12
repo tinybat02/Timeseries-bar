@@ -65,7 +65,7 @@ export class MainPanel extends PureComponent<Props, State> {
     columns.map((col, i) => {
       stylD.push({
         key: col,
-        color: colors[i] /* , infoStyle: { line: { fill: '#000', stroke: '#fff', opacity: 1 } } */,
+        color: colors[i],
       });
       legendD.push({ key: col, label: col });
     });
@@ -89,7 +89,12 @@ export class MainPanel extends PureComponent<Props, State> {
           columns={columns}
           series={data}
           info={infoValues}
-          infoTimeFormat={index => index.begin().toLocaleString()}
+          infoTimeFormat={index =>
+            index
+              .begin()
+              .toUTCString()
+              .replace(' GMT', '')
+          }
           highlighted={this.state.highlight}
           onHighlightChange={highlight => this.setState({ highlight })}
         />

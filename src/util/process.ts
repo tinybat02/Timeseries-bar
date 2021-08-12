@@ -51,7 +51,7 @@ export const processData = (series: Frame[]) => {
       columns: ['index', ...columns],
       points,
     }),
-    max: maxTotal,
+    max: maxTotal + 10,
     columns,
   };
 };

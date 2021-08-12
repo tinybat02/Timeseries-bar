@@ -53513,8 +53513,6 @@ function (_super) {
       stylD.push({
         key: col,
         color: _constants__WEBPACK_IMPORTED_MODULE_4__["colors"][i]
-        /* , infoStyle: { line: { fill: '#000', stroke: '#fff', opacity: 1 } } */
-
       });
       legendD.push({
         key: col,
@@ -53541,7 +53539,7 @@ function (_super) {
       series: data,
       info: infoValues,
       infoTimeFormat: function infoTimeFormat(index) {
-        return index.begin().toLocaleString();
+        return index.begin().toUTCString().replace(' GMT', '');
       },
       highlighted: this.state.highlight,
       onHighlightChange: function onHighlightChange(highlight) {
@@ -53752,7 +53750,7 @@ var processData = function processData(series) {
       columns: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__spread"])(['index'], columns),
       points: points
     }),
-    max: maxTotal,
+    max: maxTotal + 10,
     columns: columns
   };
 };
