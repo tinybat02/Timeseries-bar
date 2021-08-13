@@ -88,6 +88,7 @@ export class MainPanel extends PureComponent<Props, State> {
           spacing={1}
           columns={columns}
           series={data}
+          infoWidth={100}
           infoStyle={{
             label: {
               fontSize: 14,
@@ -125,6 +126,7 @@ export class MainPanel extends PureComponent<Props, State> {
           offset={5.5 * Math.pow(-1, i + 1)}
           columns={[col]}
           series={data}
+          infoWidth={120}
           infoStyle={{
             label: {
               fontSize: 14,
