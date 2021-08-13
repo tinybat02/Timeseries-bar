@@ -88,14 +88,28 @@ export class MainPanel extends PureComponent<Props, State> {
           spacing={1}
           columns={columns}
           series={data}
+          infoStyle={{
+            label: {
+              fontSize: 14,
+              fill: '#000',
+              opacity: 1,
+            },
+            box: {
+              fill: '#fff',
+              stroke: '#000',
+              opacity: 1,
+            },
+          }}
           info={infoValues}
-          infoTimeFormat={index =>
-            index
-              .begin()
-              .toUTCString()
-              .replace(' GMT', '')
-              .replace(' 00:00:00', '')
-          }
+          infoTimeFormat={index => (
+            <tspan style={{ fill: '#000', opacity: 1 }}>
+              {index
+                .begin()
+                .toUTCString()
+                .replace(' GMT', '')
+                .replace(' 00:00:00', '')}
+            </tspan>
+          )}
           highlighted={this.state.highlight}
           onHighlightChange={highlight => this.setState({ highlight })}
         />
@@ -111,8 +125,20 @@ export class MainPanel extends PureComponent<Props, State> {
           offset={5.5 * Math.pow(-1, i + 1)}
           columns={[col]}
           series={data}
+          infoStyle={{
+            label: {
+              fontSize: 14,
+              fill: '#000',
+              opacity: 1,
+            },
+            box: {
+              fill: '#fff',
+              stroke: '#000',
+              opacity: 1,
+            },
+          }}
           info={infoValues}
-          infoTimeFormat={index => index.begin().toLocaleString()}
+          infoTimeFormat={index => <tspan style={{ fill: '#000', opacity: 1 }}>{index.begin().toUTCString()}</tspan>}
           highlighted={this.state.highlight}
           onHighlightChange={highlight => this.setState({ highlight })}
         />

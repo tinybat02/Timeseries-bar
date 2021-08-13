@@ -53537,9 +53537,26 @@ function (_super) {
       spacing: 1,
       columns: columns,
       series: data,
+      infoStyle: {
+        label: {
+          fontSize: 14,
+          fill: '#000',
+          opacity: 1
+        },
+        box: {
+          fill: '#fff',
+          stroke: '#000',
+          opacity: 1
+        }
+      },
       info: infoValues,
       infoTimeFormat: function infoTimeFormat(index) {
-        return index.begin().toUTCString().replace(' GMT', '').replace(' 00:00:00', '');
+        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tspan", {
+          style: {
+            fill: '#000',
+            opacity: 1
+          }
+        }, index.begin().toUTCString().replace(' GMT', '').replace(' 00:00:00', ''));
       },
       highlighted: this.state.highlight,
       onHighlightChange: function onHighlightChange(highlight) {
@@ -53557,9 +53574,26 @@ function (_super) {
         offset: 5.5 * Math.pow(-1, i + 1),
         columns: [col],
         series: data,
+        infoStyle: {
+          label: {
+            fontSize: 14,
+            fill: '#000',
+            opacity: 1
+          },
+          box: {
+            fill: '#fff',
+            stroke: '#000',
+            opacity: 1
+          }
+        },
         info: infoValues,
         infoTimeFormat: function infoTimeFormat(index) {
-          return index.begin().toLocaleString();
+          return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tspan", {
+            style: {
+              fill: '#000',
+              opacity: 1
+            }
+          }, index.begin().toUTCString());
         },
         highlighted: _this.state.highlight,
         onHighlightChange: function onHighlightChange(highlight) {
@@ -53750,7 +53784,7 @@ var processData = function processData(series) {
       columns: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__spread"])(['index'], columns),
       points: points
     }),
-    max: maxTotal + 500,
+    max: maxTotal,
     columns: columns
   };
 };
